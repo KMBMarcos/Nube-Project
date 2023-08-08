@@ -1,3 +1,9 @@
+''' 
+Para la migracion de la base de datos: 
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+'''
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os

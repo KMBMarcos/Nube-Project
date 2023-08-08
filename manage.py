@@ -4,6 +4,8 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 '''
+
+# Guia de Django usada: https://developer.mozilla.org/es/docs/Learn/Server-side/Django/skeleton_website
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os

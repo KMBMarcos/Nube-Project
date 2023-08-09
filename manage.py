@@ -1,8 +1,10 @@
-# Para la migracion de la base de datos: 
-# python3 manage.py makemigrations
-# python3 manage.py migrate
 
 # Guia de Django usada: https://developer.mozilla.org/es/docs/Learn/Server-side/Django/skeleton_website
+
+### Con cada cambio que se haga en el proyecto debemos de ejecutar estos comandos ###
+# Para la migracion de la base de datos: python3 manage.py migrate
+# Para correr el servidor: py manage.py runserver
+
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 import os

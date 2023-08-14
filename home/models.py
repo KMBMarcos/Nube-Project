@@ -19,7 +19,7 @@ from django.urls import reverse #Used to generate URLs by reversing the URL patt
 
 class Garment(models.Model):
     """
-    Modelo que representa un Prenda de ropa (pero no un Ejemplar específico).
+    Modelo que representa la información general de la prenda.
     """
 
     name_garment = models.CharField(max_length=200)
@@ -52,7 +52,7 @@ class Garment(models.Model):
 
 class GarmentInstance(models.Model):
     """
-    Modelo que representa una si la prenda esta disponible para su compra..
+    Modelo que representa el estado de las prendas. 
     """
     id_garment = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="ID único para cada prenda de ropa en particular en toda la biblioteca")
     garment = models.ForeignKey('Garment', on_delete=models.SET_NULL, null=True)
@@ -60,20 +60,40 @@ class GarmentInstance(models.Model):
     date_stock = models.DateField(null=True, blank=True)
 
     LOAN_STATUS = (
-        ('m', 'Maintenance'),
-        ('o', 'On loan'),
+        ('u', 'Unstock'),
+        ('o', 'On Shipping'),
         ('a', 'Available'),
         ('r', 'Reserved'),
     )
 
-    stock = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='m', help_text='Disponibilidad de la prenda')
+    status = models.CharField(max_length=1, choices=LOAN_STATUS, blank=True, default='u', help_text='Disponibilidad de la prenda')
 
     class Meta:
         ordering = ["date_stock"]
-
 
     def __str__(self):
         """
         String para representar el Objeto del Modelo
         """
         return f'{self.id_garment}, {self.garment.name_garment}'
+
+class Dealer(models.Model):
+    """
+    Modelo que representa el suplidor.
+    """
+    first_name = models.CharField(max_length=100)
+    date_of_birth = models.DateField(null=True, blank=True)
+    date_of_death = models.DateField('Died', null=True, blank=True)
+
+    def get_absolute_url(self):
+        """
+        Retorna la url para acceder a una instancia particular de un autor.
+        """
+        return reverse('author-detail', args=[str(self.id)])
+
+
+    def __str__(self):
+        """
+        String para representar el Objeto Modelo
+        """
+        return '%s, %s' % (self.last_name, self.first_name)

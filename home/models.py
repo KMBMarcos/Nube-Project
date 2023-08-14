@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 import uuid # Requerida para el registro de cada prenda en la tienda.
 
 # Create your models here.
@@ -79,21 +80,21 @@ class GarmentInstance(models.Model):
 
 class Department(models.Model):
     """
-    Modelo que representa el suplidor.
+    Modelo que representa un departamento.
     """
-    first_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    name = models.CharField(max_length=100)
+    date_of_creation = models.DateField(null=True, blank=True)
+    description = models.TextField(blank=True)
 
     def get_absolute_url(self):
         """
         Retorna la url para acceder a una instancia particular de un autor.
         """
-        return reverse('author-detail', args=[str(self.id)])
+        return reverse('deparment-detail', args=[str(self.id)])
 
 
     def __str__(self):
         """
         String para representar el Objeto Modelo
         """
-        return '%s, %s' % (self.last_name, self.first_name)
+        return self.name

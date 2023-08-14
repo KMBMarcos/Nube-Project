@@ -1,2 +1,2 @@
 # Nube Project
- Proyecto de un ecommers con Django, MongoDB y otras tecnologias
+ Proyecto de un ecommers con Django, Sqlite y otras tecnologias

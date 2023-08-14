@@ -23,7 +23,7 @@ class Garment(models.Model):
     """
 
     name_garment = models.CharField(max_length=200)
-
+    
     department = models.ForeignKey('Department', on_delete=models.SET_NULL, null=True)
     # ForeignKey, ya que una prenda de ropa tiene un solo departamento, pero el mismo departamento puede tener muchas prendas de ropa.
     # 'Department' es un string, en vez de un objeto, porque la clase Department aún no ha sido declarada.
@@ -77,7 +77,7 @@ class GarmentInstance(models.Model):
         """
         return f'{self.id_garment}, {self.garment.name_garment}'
 
-class Dealer(models.Model):
+class Department(models.Model):
     """
     Modelo que representa el suplidor.
     """

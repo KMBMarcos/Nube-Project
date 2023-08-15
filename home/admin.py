@@ -8,8 +8,8 @@ from .models import Department, Brand, Garment, GarmentInstance
 # Register your models here.
 
 
-class BrandAdmin(admin.ModelAdmin):
-    pass
+class DeparmentAdmin(admin.ModelAdmin):
+    list_display = ('name','date_of_creation','description')
 
 # Definicion del ModelAdmin de Garment
 @admin.register(Garment)
@@ -22,7 +22,5 @@ class GarmentInstanceAdmin(admin.ModelAdmin):
     pass 
 
 # Instanciamos los modulos
-admin.site.register(Department)
-admin.site.register(Brand, BrandAdmin)
-admin.site.register(Garment)
-admin.site.register(GarmentInstance)
+admin.site.register(Department, DeparmentAdmin)
+admin.site.register(Brand)

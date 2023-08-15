@@ -3,6 +3,8 @@ from django.urls import reverse
 import uuid # Requerida para el registro de cada prenda en la tienda.
 
 # Create your models here.
+
+# Author
 class Brand(models.Model):
     """
     Modelo que representa la marca de la ropa (p. ej. Michael Kors, Zara, Oscar de la Renta, Forever 21, etc.).
@@ -17,7 +19,7 @@ class Brand(models.Model):
 
 from django.urls import reverse #Used to generate URLs by reversing the URL patterns
 
-
+# Book
 class Garment(models.Model):
     """
     Modelo que representa la información general de la prenda.
@@ -50,7 +52,7 @@ class Garment(models.Model):
         """
         return reverse('garment-detail', args=[str(self.id)])
 
-
+# BookInstance
 class GarmentInstance(models.Model):
     """
     Modelo que representa el estado de las prendas. 
@@ -78,6 +80,7 @@ class GarmentInstance(models.Model):
         """
         return f'{self.id_garment}, {self.garment.name_garment}'
 
+# Author
 class Department(models.Model):
     """
     Modelo que representa un departamento.

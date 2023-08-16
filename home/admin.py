@@ -1,11 +1,8 @@
-# Pasos para registrar los modulo
-
-
 from django.contrib import admin
 from .models import Department, Brand, Garment, GarmentInstance
 
 
-# Register your models here.
+# Register your models here - 
 
 
 class DeparmentAdmin(admin.ModelAdmin):
@@ -16,7 +13,7 @@ class DeparmentAdmin(admin.ModelAdmin):
 class GarmentAdmin(admin.ModelAdmin):
     pass
 
-# # Definicion de del ModelAdmin de GarmentInstance
+# Definicion de del ModelAdmin de GarmentInstance
 @admin.register(GarmentInstance) 
 class GarmentInstanceAdmin(admin.ModelAdmin):
     pass 
@@ -24,3 +21,7 @@ class GarmentInstanceAdmin(admin.ModelAdmin):
 # Instanciamos los modulos
 admin.site.register(Department, DeparmentAdmin)
 admin.site.register(Brand)
+
+"""
+Todas son formas de registrar los modulos solo que son de formas diferentes
+"""

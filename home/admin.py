@@ -18,7 +18,7 @@ class GarmentAdmin(admin.ModelAdmin):
 # Definicion de del ModelAdmin de GarmentInstance
 @admin.register(GarmentInstance) 
 class GarmentInstanceAdmin(admin.ModelAdmin):
-    pass 
+    list_filter = ('dealer','date_stock' , 'status')
 
 # Instanciamos los modulos
 admin.site.register(Department, DeparmentAdmin)

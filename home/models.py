@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 import uuid # Requerida para el registro de cada prenda en la tienda.
+from django.urls import reverse #Used to generate URLs by reversing the URL patterns
 
 # Create your models here.
 
@@ -16,8 +17,6 @@ class Brand(models.Model):
         Cadena que representa a la instancia particular del modelo (p. ej. en el sitio de Administración)
         """
         return self.name
-
-from django.urls import reverse #Used to generate URLs by reversing the URL patterns
 
 # Book
 class Garment(models.Model):
@@ -38,6 +37,16 @@ class Garment(models.Model):
     brand = models.ManyToManyField(Brand, help_text="Seleccione una marca para este producto")
     # ManyToManyField, porque una marca puede contener muchas prendas de ropa y una prenda de ropa puede cubrir varias marcas.
     # La clase Brand ya ha sido definida, entonces podemos especificar el objeto arriba.
+    
+    # Función requerida para el display de brand(ManyToManyField) en Admin
+    def display_brand(self):
+        """
+        Crea un string para Brand. Esto es requerido para el display de Brand en Admin.
+        """
+        return ', '.join([ brand.name for brand in self.brand.all()[:3] ])
+
+    # Aquí declaramos la descripción corta de 'Brand' en la vista de Admin
+    display_brand.short_description = 'Brand'
 
     def __str__(self):
         """
@@ -101,3 +110,5 @@ class Department(models.Model):
         String para representar el Objeto Modelo
         """
         return self.name
+
+

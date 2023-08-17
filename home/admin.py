@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 from django.contrib import admin
 from .models import Department, Brand, Garment, GarmentInstance
 
@@ -5,7 +7,11 @@ from .models import Department, Brand, Garment, GarmentInstance
 # Register your models here - 
 
 class DeparmentAdmin(admin.ModelAdmin):
-    list_display = ('name','date_of_creation','description')
+    # Vista de la lista de los campos de cada departamento
+    list_display = ('name' , 'date_of_creation', 'description')
+
+    # Añadiendo los campos del departamento
+    field: list[str | tuple[str, str]] = ['name', ('date_of_creation', 'description')]
 
 # Definicion del ModelAdmin de Garment
 @admin.register(Garment)
@@ -18,10 +24,11 @@ class GarmentAdmin(admin.ModelAdmin):
 # Definicion de del ModelAdmin de GarmentInstance
 @admin.register(GarmentInstance) 
 class GarmentInstanceAdmin(admin.ModelAdmin):
-    list_filter = ('dealer','date_stock' , 'status')
+    list_filter = ('dealer', 'date_stock', 'status')
+
 
 # Instanciamos los modulos
-admin.site.register(Department, DeparmentAdmin)
+admin.site.register(Department)
 admin.site.register(Brand)
 
 """

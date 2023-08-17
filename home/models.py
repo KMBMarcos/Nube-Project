@@ -35,7 +35,7 @@ class Garment(models.Model):
 
     summary = models.TextField(max_length=1000, help_text="Ingrese una breve descripción de la prenda de ropa")
 
-    size = models.CharField('SIZE', max_length=5, null=False)
+    size = models.CharField('SIZE', max_length=5, null=True)
 
     brand = models.ManyToManyField(Brand, help_text="Seleccione una marca para este producto")
 
@@ -70,7 +70,7 @@ class GarmentInstance(models.Model):
     """
     Modelo que representa el estado de las prendas. 
     """
-    id_garment = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="ID único para cada prenda de ropa en particular en toda la biblioteca")
+    id_garment = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="ID único de la prenda de ropa")
     garment = models.ForeignKey('Garment', on_delete=models.SET_NULL, null=True)
     dealer = models.CharField(max_length=200)
     date_stock = models.DateField(null=True, blank=True)

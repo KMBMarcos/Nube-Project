@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    {% block title %}<title>NUBE CLOTHES</title>{% endblock %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP CLOUD: Much Higher!!!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
+
+    {% load static %}
+    <script src="script.js"></script>
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <h1>UPCLOUD</h1>
+        </div>
+        {% block navlinks %}
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">My Cart</a></li>
+            <li><a href="#">Me</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        {% endblock %}
+    </nav>
+</header>
+<section class="color-strip">
+    <div class="color-changing-text">
+        <p><b>¡20% OFF IN PRODUCT MORE OF %30!</b></p>
+    </div>
+</section>
+
+<section class="featured-products">
+    <h2>Productos Destacados</h2>
+</section>
+<section class="featured-products">
+    <div class="product">
+        <img src="images/product1.jpg" alt="Producto 1">
+        <h3>TSHIRT OVERSIZE HOMBRE</h3>
+        <p>Precio: $XX.XX</p>
+        <a href="#" class="btn">Ver Detalles</a>
+    </div>
+    <div class="product">
+        <img src="images/product2.webp" alt="Producto 2">
+        <h3>TSHIRT BLANCO MUJER</h3>
+        <p>Precio: $XX.XX</p>
+        <a href="#" class="btn">Ver Detalles</a>
+    </div>
+    <div class="product">
+        <img src="images/product3.webp" alt="Producto 3">
+        <h3>Nombre del Producto 3</h3>
+        <p>Precio: $XX.XX</p>
+        <a href="#" class="btn">Ver Detalles</a>
+    </div>
+    <div class="product">
+        <img src="images/product4.jpg" alt="Producto 3">
+        <h3>Nombre del Producto 3</h3>
+        <p>Precio: $XX.XX</p>
+        <a href="#" class="btn">Ver Detalles</a>
+    </div>
+    <div class="product">
+        <img src="images/product5.webp" alt="Producto 3">
+        <h3>Nombre del Producto 3</h3>
+        <p>Precio: $XX.XX</p>
+        <a href="#" class="btn">Ver Detalles</a>
+    </div>
+    <div class="product">
+        <img src="images/product6.webp" alt="Producto 3">
+        <h3>Nombre del Producto 3</h3>
+        <p>Precio: $XX.XX</p>
+        <a href="#" class="btn">Ver Detalles</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <p>&copy; 2023 UPCLOUD. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>

@@ -15,14 +15,12 @@ def index(request):
     num_instances = GarmentInstance.objects.all().count()
     # Prendas disponibles (status = 'a')
     num_instances_available = GarmentInstance.objects.filter(status__exact="a").count()
-    num_departments = (
-        Department.objects.count()
-    )  # El 'all()' esta implícito por defecto.
+    num_departments = Department.objects.count()  # El 'all()' esta implícito por defecto.
 
     # Renderiza la plantilla HTML base_generic.html con los datos en la variable contexto
     return render(
         request,
-        "base_generic.html",
+        "index.html",
         context={
             "num_garments": num_garments,
             "num_instances": num_instances,

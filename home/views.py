@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.views import generic
 from .models import Garment, Department, GarmentInstance
 
 
@@ -28,3 +28,9 @@ def index(request):
             "num_departments": num_departments,
         },
     )
+
+class GarmentListView(generic.ListView):
+    model = Garment
+    context_object_name = 'garment_list'   # su propio nombre para la lista como variable de plantilla
+    queryset = Garment.objects.filter(title__icontains='tshirt')[:5] # Consigue 5 libros que contengan el título de guerra.
+    template_name = 'garments/garments_list.html'  # Especifique su propio nombre/ubicación de plantilla

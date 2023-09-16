@@ -22,14 +22,16 @@
         <div class="col-sm-2">
             {% block sidebar %}
             <ul class="sidebar-nav">
-                <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="">All garments</a></li>
-                <li><a href="">All deparments</a></li>
+                <li><a href="{% url 'index' %}">HOME</a></li>
+                <li><a href="">PRODUCTS</a></li>
+                <li><a href="">DEPARTMENT</a></li>
             </ul>
             {% endblock %}
         </div>
         <div class="col-sm-10 ">
-            {% block content %}{% endblock %}
+            {% block content %}
+
+            {% endblock %}
         </div>
     </div>
 

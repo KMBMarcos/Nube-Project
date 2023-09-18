@@ -31,6 +31,10 @@ def index(request):
 
 class GarmentListView(generic.ListView):
     model = Garment
-    context_object_name = 'garment_list'   # su propio nombre para la lista como variable de plantilla
-    queryset = Garment.objects.filter(title__icontains='tshirt')[:5] # Consigue 5 libros que contengan el título de guerra.
-    template_name = 'garments/garments_list.html'  # Especifique su propio nombre/ubicación de plantilla
+    
+    def get_context_data(self, **kwargs):
+        # Llame primero a la implementación base para obtener un contexto.
+        context = super(GarmentListView, self).get_context_data(**kwargs)
+        # Obtenga el blog del id y agréguelo al contexto.
+        context['some_data'] = 'Estos son solo algunos datos'
+        return context

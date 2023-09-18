@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Lista de productos</h1>
+
+    {% if garment_list %}
+    <ul>
+
+      {% for garment in garment_list %}
+      <li>
+        <a href="{{ garment.get_absolute_url }}">{{ garment.title }}</a> ({{garment.department}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay productos en el almacen.</p>
+    {% endif %}
+{% endblock %}

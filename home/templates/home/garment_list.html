@@ -8,7 +8,7 @@
 
       {% for garment in garment_list %}
       <li>
-        <a href="{{ garment.get_absolute_url }}">{{ garment.title }}</a> ({{garment.department}})
+        <a href="{{ garment.get_absolute_url }}">{{ garment.name_garment }}</a> ({{garment.department}})
       </li>
       {% endfor %}
 

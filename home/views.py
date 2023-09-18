@@ -29,6 +29,7 @@ def index(request):
         },
     )
 
+# Para ver la lista del modelo garment
 class GarmentListView(generic.ListView):
     model = Garment
     
@@ -38,3 +39,8 @@ class GarmentListView(generic.ListView):
         # Obtenga el blog del id y agréguelo al contexto.
         context['some_data'] = 'Estos son solo algunos datos'
         return context
+
+# Para ver los detalles de los objetos del modelo garment
+class GarmentDetailView(generic.DetailView):
+    model = Garment
+    garment_detail = 'garment_detail.html'

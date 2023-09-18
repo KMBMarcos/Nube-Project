@@ -6,7 +6,7 @@ from django.urls import reverse  # Used to generate URLs by reversing the URL pa
 
 # Create your models here.
 
-# Author
+# Genre
 class Brand(models.Model):
     """
     Modelo que representa la marca de la ropa (p. ej. Michael Kors, Zara, Oscar de la Renta, Forever 21, etc.).
@@ -19,6 +19,9 @@ class Brand(models.Model):
         Cadena que representa a la instancia particular del modelo (p. ej. en el sitio de Administración)
         """
         return self.name
+    
+    class Meta:
+        ordering = ['name']
 
 
 # Book
@@ -60,9 +63,12 @@ class Garment(models.Model):
 
     def get_absolute_url(self):
         """
-        Devuelve el URL a una instancia particular de Book
+        Devuelve el URL a una instancia particular de Garment
         """
-        return reverse('garment-detail', args=[str(self.id)])
+        return reverse('garment_detail', args=[str(self.id)])
+    
+    class Meta:
+        ordering = ['name_garment']
 
 
 # BookInstance
@@ -92,6 +98,9 @@ class GarmentInstance(models.Model):
         String para representar el Objeto del Modelo
         """
         return f'{self.id_garment}, {self.garment.name_garment}'
+    
+    class Meta:
+        ordering = ['garment']
 
 
 # Author
@@ -114,3 +123,6 @@ class Department(models.Model):
         String para representar el Objeto Modelo
         """
         return self.name
+    
+    class Meta:
+        ordering = ['name']

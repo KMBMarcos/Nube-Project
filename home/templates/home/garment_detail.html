@@ -1,0 +1,25 @@
+<!-- Extendemos nuestra plantilla base--> 
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ garment.name_garment }}</h1>
+
+  <p><strong>Department:</strong> <a href="">{{ garment.department }}</a></p> <!-- enlace de detalle del autor aún no definido -->
+  <p><strong>Summary:</strong> {{ garment.summary }}</p>
+  <p><strong>Size:</strong> {{ garment.size }}</p>
+  <p><strong>Brand:</strong> {% for brand in garment.brand.all %} {{ brand }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
+  <div style="margin-left:20px; margin-top:20px">
+    <h4>DISPONIBILIDAD</h4>
+
+    <!-- lazos for para iterar a través de listas de objetos -->
+    {% for copy in garment.garmentinstance_set.all %}
+    <!-- condicional para determinar si desplegar o no contenidos específicos --> 
+    <hr>
+    <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'm' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>
+    {% if copy.status != 'a' %}<p><strong>Prodcuto sin disponibilidad</strong> {{copy.due_back}}</p>{% endif %}
+    <p><strong>Imprimir: </strong> {{copy.imprint}}</p>
+    <p class="text-muted"><strong>Id: </strong> {{copy.id}}</p>
+    {% endfor %}
+  </div>
+{% endblock %}

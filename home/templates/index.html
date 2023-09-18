@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% extends "base_generic.html" %}
-    {% block title %}<title>Nube Clothes</title>{% endblock %}
+  {% extends "base_generic.html" %}
+  {% block title %}<title>Home | UPCLOUD</title>{% endblock %}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
 
-     <!-- Add additional CSS in static file -->
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'static/css/styles.css' %}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'static/css/styles.css' %}">
 
 </head>
-
 <body>
+  {% block content %}
+    <header>
+      <nav>
+          <div class="logo">
+              <h1>UPCLOUD</h1>
+          </div>
+          {% block navlinks %}
+          <ul class="nav-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">My Cart</a></li>
+              <li><a href="#">Me</a></li>
+              <li><a href="#">Contact</a></li>
+          </ul>
+          {% endblock %}
+      </nav>
+  </header>
 
-{% block content %}
+    <section class="banner">
+        <img src="banner.jpg" alt="Banner de promoción">
+    </section>
+
+    <section class="featured-products">
+        <!-- Aquí puedes incluir productos destacados -->
+    </section>
+
 <h1>Shop Home</h1>
 
   <p>Welcome to <em>Nube Clothes</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>
@@ -33,9 +54,9 @@
     <li><strong>Clothes available:</strong> {{ num_instances_available }}</li>
     <li><strong>Departments:</strong> {{ num_deparments }}</li>
   </ul>
-
+  <footer>
+    <p>&copy; 2023 Tienda de Ropa</p>
+  </footer>
 {% endblock %}
-
-
 </body>
 </html>

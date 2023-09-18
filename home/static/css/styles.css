@@ -1,7 +1,25 @@
+/* Estilos generales */
 body {
   font-family: 'Victor Mono', monospace;
-  background-color: #d3d1d1;
+  background-color: #333;
   color: #fff;
+  margin: 0;
+  padding: 10px 0;
+}
+
+header {
+  background-color: #333;
+    padding: 10px 0;
+  
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .sidebar-nav {
@@ -9,4 +27,60 @@ body {
     padding: 0;
     list-style: none;
   }
-  
+
+.logo h1 {
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+nav {
+  margin-right: 20px;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Estilos para el banner */
+
+.banner img {
+  width: 100%;
+  display: block;
+}
+
+/* Estilos para productos destacados (deberías agregar tu propio contenido aquí) */
+
+.featured-products {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Estilos para el footer */
+
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}

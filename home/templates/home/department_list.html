@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Lista de departamentos</h1>
+
+    {% if deparment_list %}
+    <ul>
+
+      {% for department in deparment_list %}
+      <li>
+        <a href="{{ department.get_absolute_url }}">{{ department.name }}</a> ({{ garment.description }})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>No hay departamentos en existencia.</p>
+    {% endif %}
+{% endblock %}

@@ -59,17 +59,6 @@ nav {
   display: block;
 }
 
-/* Estilos para productos destacados (deberías agregar tu propio contenido aquí) */
-
-.featured-products {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 0 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
 .product {
   background-color: #f0f0f0;
   padding: 20px;

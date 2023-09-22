@@ -1,0 +1,11 @@
+<!-- Extendemos nuestra plantilla base--> 
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>{{ department.name }}</h1>
+
+  <p><strong>Date of creation:</strong> {{ department.date_of_creation }}</p>
+  <p><strong>Decription:</strong> {{ department.description }}</p>
+
+  <a href="{% url 'department-list' %}">Volver a la lista de departamentos</a>
+{% endblock %}

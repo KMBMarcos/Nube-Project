@@ -43,7 +43,7 @@ class GarmentListView(generic.ListView):
 # Para ver los detalles de los objetos del modelo garment
 class GarmentDetailView(generic.DetailView):
     model = Garment
-    template_name = 'garment_detail.html'
+    garment_detail = 'garment_detail.html'
 
 # Para la vista de la lista del modelo department
 class DepartmentListView(generic.ListView):
@@ -59,4 +59,4 @@ class DepartmentListView(generic.ListView):
 # Para ver los detalles de los objetos del modelo department
 class DepartmentDetailView(generic.DetailView):
     model = Department
-    template_name = 'deparment_detail.html'
+    department_detail = 'deparment_detail.html'

@@ -8,7 +8,7 @@
 
       {% for department in deparment_list %}
       <li>
-        <a href="{{ department.get_absolute_url }}">{{ department.name }}</a> ({{ garment.description }})
+        <a href="{{ department.get_absolute_url }}">{{ department.name }}</a> ({{ garment.date_of_creation }})
       </li>
       {% endfor %}
 

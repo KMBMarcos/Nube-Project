@@ -112,17 +112,18 @@ class Department(models.Model):
     date_of_creation = models.DateField(null=True, blank=True)
     description = models.TextField(blank=True)
 
-    def get_absolute_url(self):
-        """
-        Retorna la url para acceder a una instancia particular de un autor.
-        """
-        return reverse('deparment-detail', args=[str(self.id)])
-
     def __str__(self):
         """
         String para representar el Objeto Modelo
         """
         return self.name
     
+    def get_absolute_url(self):
+        """
+        Retorna la url para acceder a una instancia particular de un autor.
+        """
+        return reverse('deparment_detail', args=[str(self.id)])
+    
+# Para ordenar el modelo por 'name'
     class Meta:
         ordering = ['name']

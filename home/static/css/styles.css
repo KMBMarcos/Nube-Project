@@ -7,10 +7,31 @@ body {
   padding: 10px 0;
 }
 
-header {
+/* Estilos para el encabezado */
+.header-nav {
   background-color: #333;
-    padding: 10px 0;
-  
+  padding: 10px 0;
+  color: #fff;
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav li {
+  display: inline;
+  margin-right: 20px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin-left: 20px;
 }
 
 nav {
@@ -22,38 +43,7 @@ nav {
   padding: 0 20px;
 }
 
-.sidebar-nav {
-    margin-top: 20px;
-    padding: 0;
-    list-style: none;
-  }
-
-.logo h1 {
-  font-size: 24px;
-  margin-left: 20px;
-}
-
-nav {
-  margin-right: 20px;
-}
-
-.nav-links {
-  list-style: none;
-}
-
-.nav-links li {
-  display: inline;
-  margin-right: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-
 /* Estilos para el banner */
-
 .banner img {
   width: 100%;
   display: block;
@@ -66,7 +56,6 @@ nav {
 }
 
 /* Estilos para el footer */
-
 footer {
   background-color: #222;
   color: #fff;

@@ -1,59 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  {% extends "base_generic.html" %}
-  {% block title %}<title>Home | UPCLOUD</title>{% endblock %}
+    {% extends "base_generic.html" %}
+    {% block title %}<title>Home | UPCLOUD</title>{% endblock %}
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Victor+Mono&display=swap" rel="stylesheet">
 
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
 </head>
 <body>
-  {% block content %}
-    <header>
-      <nav>
-          <div class="logo">
-              <h1>UPCLOUD</h1>
-          </div>
-          {% block navlinks %}
-          <ul class="nav-links">
-              
-          </ul>
-          {% endblock %}
-      </nav>
-  </header>
+{% block content %}
+<header>
+    <nav>
+        <div class="logo">
+            <h1>UPCLOUD</h1>
+        </div>
+    </nav>
+</header>
 
-    <section class="banner">
-        <img src="banner.jpg" alt="Banner de promoción">
-    </section>
-
-    <section class="featured-products">
-        <!-- Aquí puedes incluir productos destacados -->
-    </section>
+<section class="banner">
+    <img src="banner.jpg" alt="Banner de promoción">
+</section>
 
 <h1>Shop Home</h1>
 
-  <p>Welcome to <em>Nube Clothes</em>, a very basic Django website developed as a tutorial example on the Mozilla Developer Network.</p>  
+<p>Welcome to <em>Nube Clothes</em>, a very basic Django website developed as a tutorial example on the Mozilla
+    Developer Network.</p>
 
 <h2>Dynamic content</h2>
 
-  <p>The show has the following record counts:</p>
-  <ul>
+<p>The show has the following record counts:</p>
+<ul>
     <li><strong>Garments:</strong> {{ num_garments }}</li>
     <li><strong>Clothes:</strong> {{ num_instances }}</li>
     <li><strong>Clothes available:</strong> {{ num_instances_available }}</li>
     <li><strong>Departments:</strong> {{ num_departments }}</li>
-  </ul>
-  <footer>
+</ul>
+<p>You have visited this page {{ num_visits }}{% if num_visits == 1 %} time{% else %} times{% endif %}.</p>
+<footer>
     <p>&copy; 2023 Tienda de Ropa</p>
-  </footer>
+</footer>
 {% endblock %}
 </body>
 </html>

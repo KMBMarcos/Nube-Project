@@ -3,12 +3,12 @@
 {% block content %}
     <h1>Lista de departamentos</h1>
 
-    {% if deparment_list %}
+    {% if department_list %}
     <ul>
 
-      {% for department in deparment_list %}
+      {% for department in department_list %}
       <li>
-        <a href="{{ department.get_absolute_url }}">{{ department.name }}</a> ({{ garment.date_of_creation }})
+        <a href="{{ department.get_absolute_url }}">{{ department.name }}</a> ({{ department.date_of_creation }})
       </li>
       {% endfor %}
 

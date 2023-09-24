@@ -74,7 +74,7 @@ class Garment(models.Model):
 # BookInstance
 class GarmentInstance(models.Model):
     """
-    Modelo que representa el estado de las prendas. 
+    Modelo que representa el estado de las prendas de la tienda.
     """
     id_garment = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="ID único de la prenda de ropa")
     garment = models.ForeignKey('Garment', on_delete=models.SET_NULL, null=True)
@@ -106,7 +106,7 @@ class GarmentInstance(models.Model):
 # Author
 class Department(models.Model):
     """
-    Modelo que representa un departamento.
+    Modelo que representa los departementos de la tienda.
     """
     name = models.CharField(max_length=100)
     date_of_creation = models.DateField(null=True, blank=True)
@@ -122,7 +122,7 @@ class Department(models.Model):
         """
         Retorna la url para acceder a una instancia particular de un autor.
         """
-        return reverse('deparment_detail', args=[str(self.id)])
+        return reverse('department_detail', args=[str(self.id)])
     
 # Para ordenar el modelo por 'name'
     class Meta:

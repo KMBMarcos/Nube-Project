@@ -4,9 +4,12 @@
 
 # Creacion de entorno virtual: python -m venv /path/to/new/virtual/environment
 # Activacion de entorno virtual: venv/Scripts/activate
+
 # Para la migracion de la base de datos: python manage.py migrate
 # Para correr el servidor: python manage.py runserver
+
 # Creción del supersuario del sitio: python manage.py createsuperuser
+
 # Creacion de dependencias: pip freeze > requirements.txt
 # Instalacion de dependencias: pip install -r requirements.txt
 

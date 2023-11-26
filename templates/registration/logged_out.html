@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div>
+    <div>
+        <p>¡Sesión finalizada!</p>
+    </div>
+    <div>
+        <a href="{% url 'login'%}">Haga clic aquí para iniciar sesión nuevamente.</a>
+    </div>
+</div>
+{% endblock %}

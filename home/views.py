@@ -4,9 +4,6 @@ from django.views import generic
 from .models import Garment, Department, GarmentInstance
 
 
-# Create your views here.
-
-
 def index(request):
     """
     Función vista para la página inicio del sitio.

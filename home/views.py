@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views import generic
-
+from django.contrib.auth.decorators import login_required
 from .models import Garment, Department, GarmentInstance
 
-
+@login_required(login_url='/accounts/')
 def index(request):
     """
     Función vista para la página inicio del sitio.

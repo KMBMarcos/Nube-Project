@@ -39,9 +39,9 @@ class GarmentAdmin(admin.ModelAdmin):
 @admin.register(GarmentInstance) 
 class GarmentInstanceAdmin(admin.ModelAdmin):
     # Vista de la lista de campos de 'GarmentInstace'
-    list_display = ('id_garment', 'garment', 'dealer', 'date_stock', 'status')
+    list_display = ('id_garment', 'garment', 'dealer', 'date_buy', 'status')
     # Creamos la vista del filtro
-    list_filter = ('dealer', 'date_stock', 'status')
+    list_filter = ('dealer', 'date_buy', 'status')
 
     # Cabeceras de informacion de 'Garment Instance'
     fieldsets = (
@@ -50,7 +50,7 @@ class GarmentInstanceAdmin(admin.ModelAdmin):
                 'fields': ('garment', 'id_garment', 'dealer')
             }),
         ('Availability',{
-            'fields': ('status', 'date_stock')
+            'fields': ('status', 'date_buy')
         }),
     )
 

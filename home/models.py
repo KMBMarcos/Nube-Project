@@ -1,10 +1,11 @@
-import uuid  # Requerida para el registro de cada prenda en la tienda.
+# Requerida para el registro de cada prenda en la tienda.
+import uuid
 
+from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse  # Used to generate URLs by reversing the URL patterns
 
-
-# Create your models here.
+salesman = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
 
 # Genre
 class Brand(models.Model):
@@ -79,7 +80,7 @@ class GarmentInstance(models.Model):
     id_garment = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text="ID único de la prenda de ropa")
     garment = models.ForeignKey('Garment', on_delete=models.SET_NULL, null=True)
     dealer = models.CharField(max_length=200)
-    date_stock = models.DateField(null=True, blank=True)
+    date_buy = models.DateField(null=True, blank=True)
 
     LOAN_STATUS = (
         ('u', 'Unstock'),
